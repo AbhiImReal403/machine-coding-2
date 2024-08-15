@@ -1,0 +1,28 @@
+.btn-bd-primary {
+  --bd-violet-bg: #712cf9 !important;
+  --bd-violet-rgb: 112.520718, 44.062154, 249.437846 !important;
+
+  --bs-btn-font-weight: 600 !important;
+  --bs-btn-color: var(--bs-white) !important;
+  --bs-btn-bg: var(--bd-violet-bg) !important;
+  --bs-btn-border-color: var(--bd-violet-bg) !important;
+  --bs-btn-hover-color: var(--bs-white) !important;
+  --bs-btn-hover-bg: #6528e0 !important;
+  --bs-btn-hover-border-color: #6528e0 !important;
+  --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb) !important;
+  --bs-btn-active-color: var(--bs-btn-hover-color) !important;
+  --bs-btn-active-bg: #5a23c8 !important;
+  --bs-btn-active-border-color: #5a23c8 !important;
+}
+
+.dropdown-item{
+  --bs-dropdown-link-active-bg: rgb(188, 102, 102) !important;
+}
+
+.bd-mode-toggle {
+  z-index: 1500;
+}
+
+.bd-mode-toggle .dropdown-menu .active .bi {
+  display: block !important;
+}

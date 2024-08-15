@@ -1,0 +1,65 @@
+/* Import fonts from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Donegal+One:wght@400&display=swap");
+
+/* DM Serif Text */
+.dm-serif-text {
+  font-family: "DM Serif Text", serif;
+}
+
+/* DM Sans */
+.dm-sans-text {
+  font-family: "DM Sans", sans-serif;
+}
+
+/* Donegal One */
+.donegal-one-text {
+  font-family: "Donegal One", serif;
+}
+
+.random-user-container {
+  height: 100vh;
+  width: 100vw;
+  background: url("./assets/images/random_users.svg") no-repeat center
+    center/cover;
+  background-color: black;
+  color: #0000 !important;
+}
+
+.card {
+  width: 22.375rem; /* 358px / 16px */
+  height: 38.125rem; /* 610px / 16px */
+  padding: 1.5rem;
+  background-color: #b6b3f3; /* Light background color */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15); /* Slight shadow for depth */
+  border-radius: 1.35rem; /* 12px corner radius, converted to rem */
+  border: 0.5rem solid #ffffff; /* 8px border stroke, converted to rem */
+  /* color: #0000 !important; */
+}
+
+.random-user-container .profile .profilePic {
+  align-self: center;
+  width: 6.25em;
+  height: 6.25em;
+  border-radius: 50%;
+  background: white;
+  position: relative;
+  /* background-image: url(https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-1/p320x320/105999835_10100560442850648_8766919103329730338_o.jpg?_nc_cat=100&_nc_sid=dbb9e7&_nc_ohc=oYbTcdgbipsAX9tXGux&_nc_ht=scontent-atl3-1.xx&tp=6&oh=3e9988fffb6a606e031da822577d9444&oe=5F93540F); */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.agePill {
+  top: -15% !important;
+  /* right: -10% !important; */
+  font-size: 8px !important;
+}
+
+.profile-card-body {
+  /* flex: 1 1 auto; */
+  padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
+  color: var(--bs-card-color);
+}
