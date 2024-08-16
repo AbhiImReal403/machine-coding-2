@@ -7,11 +7,34 @@ import likeIcon from "../../assets/icons/like_icon.svg";
 import saveIcon from "../../assets/icons/save_icon.svg";
 import reshareIcon from "../../assets/icons/reshare_icon.svg";
 import elon_pic from "../../assets/images/elon_pic_2.svg";
+import { useEffect, useState } from "react";
 
-function RandomJokeCard() {
+// eslint-disable-next-line react/prop-types
+function RandomJokeCard({ jokeData, isLoading }) {
+  const initialTweetState = {
+    joke: "",
+    date: "",
+    time: "",
+    views: "",
+    comments: "",
+    retweets: "",
+    likes: "",
+    saves: "",
+  };
+
+  const [tweetDetails, setTweetDetails] = useState(initialTweetState);
+
+  useEffect(() => {
+    const mapTweetDetails = () => {
+      setTweetDetails(jokeData);
+    };
+
+    mapTweetDetails();
+  }, [jokeData]);
+
   return (
     <>
-      <div className="card text-center">
+      <div className={`card text-center ${isLoading ? "loading" : ""}`}>
         <div className="d-flex justify-content-start">
           <img src={backIcon} alt="" className="me-4" />
           <div
@@ -54,14 +77,29 @@ function RandomJokeCard() {
         </div>
         <div style={{ padding: "0.6rem 0px 0px 0px" }}>
           <p className="joke-text">
-            Even some of the best AI software engineers in the world don’t
-            realize how advanced Tesla AI has become
+            {tweetDetails && tweetDetails?.joke
+              ? tweetDetails?.joke
+              : "Even some of the best AI software engineers in the world don’t realize how advanced Tesla AI has become"}
           </p>
         </div>
 
         <div style={{ padding: "0.5rem 0px 0px 0px" }}>
           <p className="tweet_insight">
-            11:18 PM · Jul 30, 2024 · <span>20.5M</span> Views
+            {` ${
+              tweetDetails && tweetDetails?.time
+                ? tweetDetails?.time
+                : "11:18 PM"
+            } · ${
+              tweetDetails && tweetDetails?.date
+                ? tweetDetails?.date
+                : "Jul 30, 2024"
+            } · `}
+            <span>
+              {tweetDetails && tweetDetails?.views
+                ? tweetDetails?.views
+                : "20.5M"}
+            </span>{" "}
+            Views
           </p>
         </div>
 
@@ -100,6 +138,19 @@ function RandomJokeCard() {
           >
             &copy; chai aur code
           </div>
+        </div>
+      </div>
+      <div
+        className={`${
+          isLoading ? "d-flex position-absolute end-50 top-50" : "d-none"
+        }`}
+      >
+        <div
+          className="spinner-border"
+          role="status"
+          style={{ color: "#1C9BEF" }}
+        >
+          <span className="visually-hidden">Loading...</span>
         </div>
       </div>
     </>
