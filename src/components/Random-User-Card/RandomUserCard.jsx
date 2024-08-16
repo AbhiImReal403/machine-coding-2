@@ -444,7 +444,7 @@ function RandomUserCard({ userData, onRefreshData, isLoading }) {
               fontSize: "8px",
             }}
           >
-            © chai aur code
+            &copy; chai aur code
           </div>
         </div>
       </div>
