@@ -1,11 +1,10 @@
-// import React from 'react'
-
 import refreshIcon from "../../assets/icons/refresh.svg";
 import backIcon from "../../assets/icons/back.svg";
 import catTest from "../../assets/icons/cat-silhouette-vector.svg";
 
 import locationIcon from "../../assets/icons/location.svg";
 import callIcon from "../../assets/icons/call_me.svg";
+
 // import chaiAurCodeIcon from "../../assets/icons/chaiAurCode.svg";
 // import chaiAurCodeIcon from "../../assets/icons/chaiCodeCup.svg";
 
@@ -35,7 +34,6 @@ function RandomUserCard({ userData, onRefreshData, isLoading }) {
 
   useEffect(() => {
     const mapUserDetails = () => {
-      console.log(userData);
       setUserDetails(userData);
     };
 

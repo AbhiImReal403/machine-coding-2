@@ -30,15 +30,15 @@ function RandomUser() {
         });
 
         // Update state with the fetched data
-        console.log(response);
+        // console.log(response);
 
         formatUserData(response.data.data);
       } catch (err) {
         // Handle any errors that occur
-        console.log(err);
+        console.error(err, "Error form Random User fetch");
       } finally {
         // Update loading state
-        // setLoading(false);
+
         setTimeout(() => {
           setLoading(false);
         }, 1000);
@@ -52,72 +52,6 @@ function RandomUser() {
       controller.abort();
     };
   }, [needReload]);
-
-  // const formatUserData  = (data) => {
-  //   const resultData = {};
-  //   if (data) {
-  //     resultData["title"] =
-  //       data?.name && data?.name?.title ? data?.name?.title : "";
-  //     resultData["fullName"] =
-  //       data?.name && data?.name?.first && data?.name?.last
-  //         ? getFullName({
-  //             fname: data?.name?.first,
-  //             lname: data?.name?.last,
-  //           })
-  //         : "";
-  //     resultData["username"] =
-  //       data?.login && data?.login?.username ? data?.login?.username : "";
-  //     resultData["city"] =
-  //       data?.location && data?.location?.city ? data?.location?.city : "";
-
-  //     resultData["timezone_offset"] =
-  //       data?.location &&
-  //       data?.location?.timezone &&
-  //       data?.location?.timezone?.offset
-  //         ? data?.location?.timezone?.offset
-  //         : "";
-  //     resultData["timezone_desc"] =
-  //       data?.location &&
-  //       data?.location?.timezone &&
-  //       data?.location?.timezone?.description
-  //         ? data?.location?.timezone?.description.substring(
-  //             data?.location?.timezone?.description.lastIndexOf(",") + 2
-  //           )
-  //         : "";
-
-  //     resultData["nat"] = data?.nat ? data?.nat : "";
-  //     resultData["dob"] =
-  //       data?.dob && data?.dob?.date
-  //         ? moment(data?.dob?.date).format("DD MMMM, YYYY")
-  //         : "";
-  //     resultData["picture"] =
-  //       data?.picture && data?.picture?.large ? data?.picture?.large : null;
-  //     resultData["registered"] =
-  //       data?.registered && data?.registered?.date
-  //         ? moment(data?.registered?.date).format("DD MMMM, YYYY")
-  //         : null;
-  //     resultData["phone"] = data?.phone ? data?.phone : "";
-
-  //     resultData["latitude"] =
-  //       data?.location &&
-  //       data?.location?.coordinates &&
-  //       data?.location?.coordinates?.latitude
-  //         ? data?.location?.coordinates?.latitude
-  //         : null;
-
-  //     resultData["longitude"] =
-  //       data?.location &&
-  //       data?.location?.coordinates &&
-  //       data?.location?.coordinates?.longitude
-  //         ? data?.location?.coordinates?.longitude
-  //         : null;
-
-  //     // console.log(data);
-  //     // console.log(resultData);
-
-  //     setUserData(resultData);
-  //   }
-  // };
 
   const formatUserData = (data) => {
     if (!data) return;
