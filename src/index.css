@@ -63,3 +63,19 @@
   padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
   color: var(--bs-card-color);
 }
+
+.chaiAurCodeBtn #full_chai:hover {
+  animation: 4s linear splashTea infinite alternate-reverse;
+  /* animation: 2s linear(0 0%, 0.37 5.04%, 0.11 22.32%, 0.3 52.2%, 0.5 63.87%, 0.68 69%, 1.22 90.2%) splashTea infinite alternate; */
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes splashTea {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
