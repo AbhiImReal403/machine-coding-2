@@ -84,17 +84,21 @@ Each feature is built with precise adherence to the provided Figma designs and i
 
 ## 📸 Screenshots
 
+### FIGMA LINK
+
+[MasterJi-Assignment-2-(React.js)](<https://www.figma.com/design/lZnq8DrxXMN6hdRIUHjKdc/MasterJi-Assignment-2-(React.js)?node-id=0-1&t=VNbsshdPocye2yJl-1>)
+
 ### Random User Profile
 
-![Random User Profile](./screenshots/random-user.png)
+![Random User Profile](./screenshots/random-user.svg)
 
 ### Random Jokes Tweet
 
-![Random Jokes Tweet](./screenshots/random-jokes.png)
+![Random Jokes Tweet](./screenshots/random-jokes.svg)
 
 ### Cats Listing
 
-![Cats Listing](./screenshots/cats-listing.png)
+![Cats Listing](./screenshots/cats-listing.svg)
 
 ## 🌐 Deployment
 
