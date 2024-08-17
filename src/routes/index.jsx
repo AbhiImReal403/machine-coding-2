@@ -4,7 +4,7 @@ import { GodMode, PublicLayout } from "../layouts";
 
 export default [
   {
-    path: "/gods-mode",
+    path: "/machine-code-2/gods-mode",
     Component: GodMode,
     errorElement: PageNotFound,
     children: [
@@ -32,7 +32,7 @@ export default [
     ],
   },
   {
-    path: "/",
+    path: "/machine-code-2/",
     Component: PublicLayout,
     errorElement: <PageNotFound />,
     children: [
