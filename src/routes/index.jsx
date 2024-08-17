@@ -62,7 +62,7 @@ export default [
   // },
   {
     path: "/",
-    Component: PublicLayout,
+    Component: GodMode,
     errorElement: <PageNotFound />,
     children: [
       {
