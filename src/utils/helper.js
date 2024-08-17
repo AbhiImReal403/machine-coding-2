@@ -62,5 +62,4 @@ export const randomInsightGen = () => {
   };
 };
 
-// Example usage:
-console.log(randomInsightGen(1)); // Generate insights with key 1
+

@@ -188,3 +188,15 @@
   text-align: center !important;
   color: #71767b !important;
 }
+
+
+.cat-card-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 2rem; /* Adjust gap between cards */
+  padding: 1rem; /* Optional: Add padding for better spacing */
+}
+
+.cat-card {
+  flex: 0 0 auto !important; /* Prevent cards from shrinking */
+}
