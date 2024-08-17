@@ -19,7 +19,12 @@ function GodMode() {
     </>
   ) : (
     <>
-      <img className="vh-100 vw-100" src={itachi} alt="" />
+      <img
+        className="vh-100 vw-100"
+        style={{ color: "black !important", overflow: "hidden" }}
+        src={itachi}
+        alt=""
+      />
     </>
   );
 }
