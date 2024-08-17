@@ -2,6 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import useAxios from "../../services/api";
 import { CardListingCard } from "../../components";
 
+import chaiAurCode from "../../assets/icons/chai_aur_code.svg";
+
 const CatsListing = () => {
   const axiosInstance = useAxios();
   const [items, setItems] = useState([]);
@@ -32,7 +34,9 @@ const CatsListing = () => {
     } catch (error) {
       console.error("Error fetching items:", error);
     } finally {
-      setLoading(false);
+      setTimeout(() => {
+        setLoading(false);
+      }, 2000);
     }
   };
 
@@ -41,14 +45,12 @@ const CatsListing = () => {
   }, [page]);
 
   const lastItemRef = (node) => {
-    console.log("ref");
-    console.log(observer);
     if (loading) return;
     if (observer.current) observer.current.disconnect();
     observer.current = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting && hasMore) {
-          console.log("IntersectionObserver entries:", entries);
+          // console.log("IntersectionObserver entries:", entries);
           setPage((prevPage) => prevPage + 1);
         }
       },
@@ -63,33 +65,69 @@ const CatsListing = () => {
   };
 
   return (
-    <div className="cat-card-container d-flex overflow-auto py-3">
-      {items.map((item, index) => {
-        const isLastItem = items.length === index + 1;
+    <div className="cat-listing-container">
+      <div className="page-header">Cats around us</div>
 
-        return (
-          <CardListingCard
-            catDt={item}
-            ref={isLastItem ? lastItemRef : null}
-            key={`${item.id}`}
-          />
-          // <div
-          //   key={item.id}
-          //   ref={index === items.length - 1 ? lastItemRef : null}
-          //   style={{
-          //     minWidth: "200px",
-          //     marginRight: "10px",
-          //     height: "200px",
-          //     backgroundColor: "lightgray",
-          //   }}
-          // >
-          //   {item.name}
-          // </div>
-        );
-      })}
+      <div className="content text-center">
+        <div className="cat-card-container py-3">
+          <div className="card cat-card loading">
+            <div
+              className="card-img-top align-items-center d-flex justify-content-center"
+              alt="..."
+            >
+              <div
+                className="spinner-border"
+                role="status"
+                style={{ color: "#1C9BEF" }}
+              >
+                <span className="visually-hidden">Loading...</span>
+              </div>
+            </div>
+          </div>
 
-      {loading && <p>Loading...</p>}
-      {!hasMore && <p>No more items to load</p>}
+          {items.map((item, index) => {
+            const isLastItem = items.length === index + 1;
+
+            return (
+              <CardListingCard
+                catDt={item}
+                ref={isLastItem ? lastItemRef : null}
+                key={`${item.id}`}
+              />
+              // <div
+              //   key={item.id}
+              //   ref={index === items.length - 1 ? lastItemRef : null}
+              //   style={{
+              //     minWidth: "200px",
+              //     marginRight: "10px",
+              //     height: "200px",
+              //     backgroundColor: "lightgray",
+              //   }}
+              // >
+              //   {item.name}
+              // </div>
+            );
+          })}
+
+          {loading && <div className="card cat-card loading"></div>}
+          {!hasMore && <p>No more items to load</p>}
+        </div>
+      </div>
+      <div className="position-fixed top-0 end-0 mb-3 me-3">
+        <img
+          src={chaiAurCode}
+          width={77}
+          height={80}
+          style={{ cursor: "pointer" }}
+          onClick={() => {
+            window.open(
+              "https://chaicode.com/",
+              "_blank",
+              "rel=noopener noreferrer"
+            );
+          }}
+        />
+      </div>
     </div>
   );
 };

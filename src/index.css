@@ -3,6 +3,142 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Donegal+One:wght@400&display=swap");
 
+/* CSS Resey */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Reset End */
+
+/* Custom CSS starts here */
+
 /* DM Serif Text */
 .dm-serif-text {
   font-family: "DM Serif Text", serif;
@@ -116,8 +252,8 @@
   filter: blur(5px);
 }
 
-.elonProfile {
-}
+/* .elonProfile {
+} */
 .elonProfilePic {
   width: 2.8125em;
   height: 2.8125em;
@@ -189,8 +325,55 @@
   color: #71767b !important;
 }
 
+.cat-listing-container {
+  height: 100vh;
+  width: 100vw;
+  background: url("./assets/images/catsAroundUs.svg") no-repeat center
+    center/cover;
+  background-color: #a1a1a1;
+  color: #0000 !important;
+  overflow: hidden;
+}
+
+.cat-listing-container .page-header {
+  font-family: "DM Sans", sans-serif !important;
+  font-weight: bold !important;
+  font-size: 48px !important;
+  letter-spacing: -0.004rem;
+  text-align: left;
+  color: #ffffff !important;
+  margin: 2rem 2.5rem 0.5rem 2.5rem !important;
+}
+
+.cat-listing-container .content {
+  margin-left: 2.5rem !important;
+}
+
+.cat-listing-container .card {
+  border: 0px;
+  /* 375px / 16px */
+  width: 23.44rem;
+  /* 643px / 16px */
+  height: 40.19rem;
+  /* padding: 1.5rem; */
+  background-color: rgba(255, 255, 255, 1); /* Light background color */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.25); /* Slight shadow for depth */
+  border-radius: 1.35rem; /* 12px corner radius, converted to rem */
+  color: #000 !important;
+}
+
+.cat-listing-container .card.expandCard {
+  max-height: auto;
+  height: auto;
+  transition: height 1s ease-in;
+}
+
+.cat-card-container::-webkit-scrollbar {
+  display: none;
+}
 
 .cat-card-container {
+  overflow: hidden;
   display: flex;
   overflow-x: auto;
   gap: 2rem; /* Adjust gap between cards */
@@ -199,4 +382,147 @@
 
 .cat-card {
   flex: 0 0 auto !important; /* Prevent cards from shrinking */
+}
+
+.cat-card .card-img-top {
+  width: 23.44rem;
+  height: 20.3125rem;
+  background: rgba(128, 128, 128, 0.682);
+  object-fit: cover;
+  border-top-left-radius: 1.35rem; /* 12px corner radius, converted to rem */
+  border-top-right-radius: 1.35rem; /* 12px corner radius, converted to rem */
+}
+
+.cat-card-container .card.cat-card.loading {
+  -webkit-filter: blur(2px);
+  -moz-filter: blur(2px);
+  -o-filter: blur(2px);
+  -ms-filter: blur(2px);
+  filter: blur(2px);
+  /* background: #778899; */
+  /* background: #c0c0c0; */
+  /* background: #71767b; */
+}
+
+.cat-card-container .card.cat-card .card-body {
+  text-align: left;
+}
+
+.cat-card-container .card.cat-card .card-body .card-title {
+  text-align: left;
+  font-family: "DM Sans", sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 28px !important;
+  letter-spacing: -0.004rem;
+  text-align: left;
+  color: #000;
+}
+
+.cat-card-container .card.cat-card .card-body .card-text,
+.cat-card-container .card.cat-card .card-body .card-text > * {
+  font-family: "DM Sans", sans-serif !important;
+  font-weight: normal !important;
+  font-size: 14px !important;
+  letter-spacing: -0.004rem;
+  text-align: left;
+  color: #000;
+  line-height: normal;
+}
+
+.cat_Temp {
+  display: flex;
+  flex-direction: row !important;
+  gap: 0.5rem !important;
+  flex-wrap: wrap;
+}
+
+.cattery {
+  font-family: "DM Sans", sans-serif !important;
+  font-weight: normal;
+  font-size: 12px;
+  background-color: #efefef;
+  padding: 0.1rem 1rem 0;
+  display: flex;
+  border-radius: 50rem;
+  cursor: pointer;
+  text-align: center;
+  color: #353535;
+}
+.cattery:hover {
+  background-color: #d482db;
+  color: white;
+}
+
+.cat_desc {
+  min-height: 5rem;
+  position: relative;
+}
+
+.cat_desc .card-text {
+  max-height: 3.4375rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.cat_desc .card-text.isHidden.doBlurText::after {
+  filter: blur(2px); /* Apply a blur effect */
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 32px; /* Height of the gradient */
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0),
+    #fff
+  ); /* Gradient effect */
+  transition: background 1s ease-in;
+}
+
+.cat_desc .card-text.isShown {
+  height: auto;
+  max-height: none;
+  overflow: hidden;
+}
+
+.read-more {
+  position: absolute;
+  bottom: 7%;
+  right: 0%;
+  cursor: pointer;
+  font-weight: lighter;
+  color: red;
+}
+.read-less {
+  position: absolute;
+  bottom: -2%;
+  right: 0%;
+  cursor: pointer;
+  font-weight: lighter;
+  color: rgb(6, 43, 61);
+}
+
+.read-more:after {
+  display: inline-block;
+  position: relative;
+  top: -3px;
+  padding-left: 8px;
+  content: "\00bb";
+  transform: rotate(90deg);
+}
+.read-less:after {
+  display: inline-block;
+  position: relative;
+  top: -3px;
+  padding-left: 8px;
+  content: "\00ab";
+  transform: rotate(90deg);
+}
+
+.read-more:hover {
+  color: rgb(15, 137, 198);
+}
+.read-less:hover {
+  color: red;
 }
