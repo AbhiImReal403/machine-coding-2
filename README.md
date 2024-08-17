@@ -56,8 +56,8 @@ Each feature is built with precise adherence to the provided Figma designs and i
 1. **Clone the repository**:
 
    ```bash
-   git clone https://github.com/your-username/random-profiles-jokes-cats.git
-   cd random-profiles-jokes-cats
+   git clone https://github.com/AbhiImReal403/machine-coding-2.git
+   cd machine-coding-2
    ```
 
 2. **Install dependencies**:
