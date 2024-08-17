@@ -7,7 +7,8 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import routes from "./routes";
 
 const router = createBrowserRouter(routes, {
-  basename: "/",
+  // basename: "/",
+  basename: "/machine-coding-2/",
 });
 
 function App() {

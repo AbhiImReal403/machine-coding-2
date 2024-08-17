@@ -3,8 +3,9 @@ import { RandomUser, RandomJokes, CatsListing, PageNotFound } from "../pages";
 import { GodMode, PublicLayout } from "../layouts";
 
 export default [
+  
   {
-    path: "/machine-code-2/gods-mode",
+    path: "/gods-mode",
     Component: GodMode,
     errorElement: PageNotFound,
     children: [
@@ -31,8 +32,36 @@ export default [
       },
     ],
   },
+  // {
+  //   path: "/machine-code-2",
+  //   Component: PublicLayout,
+  //   errorElement: <PageNotFound />,
+  //   children: [
+  //     {
+  //       index: true,
+  //       loader: () => redirect("random-user"),
+  //     },
+  //     {
+  //       path: "random-user",
+  //       Component: RandomUser,
+  //     },
+  //     {
+  //       path: "random-jokes",
+  //       Component: RandomJokes,
+  //     },
+  //     {
+  //       path: "cats-listing",
+  //       Component: CatsListing,
+  //     },
+
+  //     {
+  //       path: "*",
+  //       Component: PageNotFound,
+  //     },
+  //   ],
+  // },
   {
-    path: "/machine-code-2/",
+    path: "/",
     Component: PublicLayout,
     errorElement: <PageNotFound />,
     children: [
