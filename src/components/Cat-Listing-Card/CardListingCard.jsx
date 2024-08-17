@@ -37,7 +37,7 @@ const CardListingCard = forwardRef(({ catDt }, ref) => {
         <div className="card-body">
           <h5 className="card-title">{name}</h5>
 
-          <div className="cat_desc">
+          <div className="cat_desc py-1 mb-2">
             <p
               className={`card-text ${!isExpanded ? "isHidden" : "isShown"} ${
                 !isExpanded && description.length > 150 ? "doBlurText" : ""
@@ -59,7 +59,7 @@ const CardListingCard = forwardRef(({ catDt }, ref) => {
             )}
           </div>
 
-          <div className="d-flex gap-5 mb-1">
+          <div className="d-flex gap-5 mb-2">
             <div
               className="fst-italic fw-bolder dm-sans-text"
               style={{
@@ -81,7 +81,7 @@ const CardListingCard = forwardRef(({ catDt }, ref) => {
               {origin}
             </div>
           </div>
-          <div className="mb-1 d-flex flex-column gap-1">
+          <div className="mb-2 d-flex flex-column gap-1">
             <div
               className="fst-italic fw-bolder dm-sans-text"
               style={{
@@ -102,7 +102,7 @@ const CardListingCard = forwardRef(({ catDt }, ref) => {
                 ))}
             </div>
           </div>
-          <div className="d-flex gap-5 mb-1">
+          <div className="d-flex gap-5 mb-2">
             <div
               className="fst-italic fw-bolder dm-sans-text"
               style={{
@@ -121,8 +121,33 @@ const CardListingCard = forwardRef(({ catDt }, ref) => {
                 letterSpacing: "0.004rem",
               }}
             >
-              {origin}
+              {life_span ? `${life_span} years` : "-"}
             </div>
+          </div>
+
+          <div
+            className="dm-sans-text my-4"
+            style={{
+              cursor: `${
+                wikipedia_url && wikipedia_url.length > 0
+                  ? "pointer"
+                  : "not-allowed"
+              }`,
+              fontSize: "14px",
+              letterSpacing: "0.004rem",
+              color: `${
+                wikipedia_url && wikipedia_url.length > 0
+                  ? "#7D99E2"
+                  : "#e27d7d"
+              }`,
+            }}
+            onClick={() => {
+              wikipedia_url &&
+                wikipedia_url.length > 0 &&
+                window.open(wikipedia_url);
+            }}
+          >
+            Learn More
           </div>
         </div>
       </div>

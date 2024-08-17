@@ -458,10 +458,11 @@ table {
   position: relative;
 }
 
-.cat_desc .card-text {
+.cat_desc .card-text.isHidden {
   max-height: 3.4375rem;
   overflow: hidden;
   position: relative;
+  transition: max-height 0.3s ease-in-out;
 }
 
 .cat_desc .card-text.isHidden.doBlurText::after {
@@ -477,13 +478,16 @@ table {
     rgba(255, 255, 255, 0),
     #fff
   ); /* Gradient effect */
-  transition: background 1s ease-in;
+  transition: background 0.5s ease-in-out ;
+}
+
+.cat_desc .card-text.isShown::-webkit-scrollbar {
+  display: block;
 }
 
 .cat_desc .card-text.isShown {
-  height: auto;
-  max-height: none;
-  overflow: hidden;
+  max-height: inherit;
+  overflow: visible;
 }
 
 .read-more {
@@ -496,7 +500,7 @@ table {
 }
 .read-less {
   position: absolute;
-  bottom: -2%;
+  bottom: -10%;
   right: 0%;
   cursor: pointer;
   font-weight: lighter;

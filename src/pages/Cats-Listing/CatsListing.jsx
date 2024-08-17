@@ -4,6 +4,8 @@ import { CardListingCard } from "../../components";
 
 import chaiAurCode from "../../assets/icons/chai_aur_code.svg";
 
+import catError from "../../assets/images/cat_404.svg";
+
 const CatsListing = () => {
   const axiosInstance = useAxios();
   const [items, setItems] = useState([]);
@@ -36,7 +38,7 @@ const CatsListing = () => {
     } finally {
       setTimeout(() => {
         setLoading(false);
-      }, 2000);
+      }, 5000);
     }
   };
 
@@ -70,21 +72,6 @@ const CatsListing = () => {
 
       <div className="content text-center">
         <div className="cat-card-container py-3">
-          <div className="card cat-card loading">
-            <div
-              className="card-img-top align-items-center d-flex justify-content-center"
-              alt="..."
-            >
-              <div
-                className="spinner-border"
-                role="status"
-                style={{ color: "#1C9BEF" }}
-              >
-                <span className="visually-hidden">Loading...</span>
-              </div>
-            </div>
-          </div>
-
           {items.map((item, index) => {
             const isLastItem = items.length === index + 1;
 
@@ -109,8 +96,37 @@ const CatsListing = () => {
             );
           })}
 
-          {loading && <div className="card cat-card loading"></div>}
-          {!hasMore && <p>No more items to load</p>}
+          {loading && (
+            <div className="card cat-card loading">
+              <div
+                className="card-img-top align-items-center d-flex justify-content-center"
+                alt="..."
+              >
+                <div
+                  className="spinner-border"
+                  role="status"
+                  style={{ color: "#1C9BEF" }}
+                >
+                  <span className="visually-hidden">Loading...</span>
+                </div>
+              </div>
+            </div>
+          )}
+          {!hasMore && (
+            <div className="card cat-card">
+              <img className="card-img-top" alt="..." src={catError} />
+              <div
+                className="card-body d-flex align-items-center justify-content-center"
+                style={{ background: "filter: blur(2px)" }}
+              >
+                <h1 style={{ fontSize: "1.5rem" }}>
+                  {
+                    "We've checked every corner of the internet, but it seems like we've run out of cats! 😿 The Cat HQ is taking a nap, so come back later for more feline goodness."
+                  }
+                </h1>
+              </div>
+            </div>
+          )}
         </div>
       </div>
       <div className="position-fixed top-0 end-0 mb-3 me-3">
